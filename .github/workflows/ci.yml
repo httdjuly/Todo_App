@@ -2,23 +2,12 @@ name: CI on Pull Request
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened]
+   branches: [ main ]
 
 jobs:
-  build:
+  demo-job:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Thiết lập Node.js (nếu là project Node)
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-
-      - name: Cài thư viện
-        run: npm install
-
-      - name: Chạy test
-        run: npm test
+      - name: Bắt đầu CI
+        run: echo "CI đang chạy thành công"

@@ -26,3 +26,9 @@ jobs:
                 "id": "31"
               }
             }'
+
+      - name: Gửi thông báo lên Slack
+        run: |
+          curl -X POST -H 'Content-type: application/json' \
+          --data '{"text":"✅ Issue *${{ steps.extract.outputs.ISSUE_KEY }}* đã được đóng sau khi merge PR: *${{ github.event.pull_request.title }}*"}' \
+          ${{ secrets.SLACK_WEBHOOK_URL }}

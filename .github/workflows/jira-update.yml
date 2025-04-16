@@ -18,7 +18,7 @@ jobs:
       - name: Cập nhật trạng thái Jira
         run: |
           curl --request POST \
-            --url "https://<tên-miền>.atlassian.net/rest/api/3/issue/${{ steps.extract.outputs.ISSUE_KEY }}/transitions" \
+            --url "https://thuyduon.atlassian.net/rest/api/3/issue/${{ steps.extract.outputs.ISSUE_KEY }}/transitions" \
             --user "${{ secrets.JIRA_EMAIL }}:${{ secrets.JIRA_API_TOKEN }}" \
             --header 'Content-Type: application/json' \
             --data '{
